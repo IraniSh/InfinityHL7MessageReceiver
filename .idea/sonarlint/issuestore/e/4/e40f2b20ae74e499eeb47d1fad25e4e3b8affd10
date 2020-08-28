@@ -1,0 +1,11 @@
+
+Z	java:S106'"9Replace this use of System.out or System.err by a logger.(ñ´ÿìúÿÿÿÿ8áå†ÿÂ.
+E
+java:S11486"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8¼É‹ôÂ.
+E
+java:S1148."#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8™ºÅğÂ.
+]	java:S125("<This block of commented-out lines of code should be removed.(ùõ’šşÿÿÿÿ8áå†ÿÂ.
+h
+java:S2142,"FEither re-interrupt this method or rethrow the "InterruptedException".(ÇâŞáøÿÿÿÿ8™ºÅğÂ.
+E
+java:S11482"#Use a logger to log this exception.(€ÉÔ…ıÿÿÿÿ8‡¼ñÂ.
