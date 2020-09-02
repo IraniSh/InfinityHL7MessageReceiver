@@ -40,19 +40,22 @@ public class AdtA01MessageBuilder
     mshSegment.getReceivingApplication().getNamespaceID().setValue("Remote System");
     mshSegment.getReceivingFacility().getNamespaceID().setValue("Remote Facility");
     mshSegment.getMessageControlID().setValue(getSequenceNumber());
-    mshSegment.getVersionID().getVersionID().setValue("2.5");
+    mshSegment.getVersionID().getVersionID().setValue("2.5.1");
+    mshSegment.getCharacterSet(0).setValue("UNICODE UTF-8");
   }
 
-  private void createEvnSegment() throws DataTypeException {
+  private void createEvnSegment() throws DataTypeException
+  {
     EVN evn = adtMessage.getEVN();
     evn.getEventTypeCode().setValue("A01");
   }
 
-  private void createPidSegment() throws DataTypeException {
+  private void createPidSegment() throws DataTypeException
+  {
     PID pid = adtMessage.getPID();
     XPN patientName = pid.getPatientName(0);
-    patientName.getFamilyName().getSurname().setValue("Song");
-    patientName.getGivenName().setValue("Jong Ki");
+    patientName.getFamilyName().getSurname().setValue("Söng");
+    patientName.getGivenName().setValue("Jöng Ki");
     XAD patientAddress = pid.getPatientAddress(0);
     patientAddress.getStreetAddress().getStreetOrMailingAddress().setValue("History DC");
     patientAddress.getCity().setValue("Itaewon dong");
@@ -60,7 +63,8 @@ public class AdtA01MessageBuilder
     patientAddress.getCountry().setValue("Korea");
   }
 
-  private void createPv1Segment() throws DataTypeException {
+  private void createPv1Segment() throws DataTypeException
+  {
     PV1 pv1 = adtMessage.getPV1();
     pv1.getPatientClass().setValue("I");
     PL assignedPatientLocation = pv1.getAssignedPatientLocation();
@@ -70,15 +74,17 @@ public class AdtA01MessageBuilder
     XCN referringDoctor = pv1.getReferringDoctor(0);
     referringDoctor.getIDNumber().setValue("99999999");
     referringDoctor.getFamilyName().getSurname().setValue("Kim");
-    referringDoctor.getGivenName().setValue("Hyun Joong");
+    referringDoctor.getGivenName().setValue("Hyun Jöong");
     referringDoctor.getIdentifierTypeCode().setValue("456789");
   }
 
-  private String getCurrentTimeStamp() {
+  private String getCurrentTimeStamp()
+  {
     return new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
   }
 
-  private String getSequenceNumber() {
+  private String getSequenceNumber()
+  {
     String facilityNumberPrefix = "1234";
     return facilityNumberPrefix.concat(getCurrentTimeStamp());
   }
